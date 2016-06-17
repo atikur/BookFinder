@@ -10,7 +10,7 @@ import UIKit
 
 extension ITCClient {
     
-    func getBooksForSearchTerm(term: String) {
+    func getBooksForSearchTerm(term: String, completionHandler: (booksList: [Book]?, errorString: String?) -> Void) {
         let methodParameters: [String: String] = [
             ParameterKeys.Term: term,
             ParameterKeys.Entity: ParameterValues.EntityEbook
@@ -23,11 +23,17 @@ extension ITCClient {
             result, error in
             
             guard error == nil else {
-                print(error)
+                completionHandler(booksList: nil, errorString: error?.localizedDescription)
                 return
             }
             
-            print(result)
+            guard let result = result,
+                bookResults = result[ResponseKeys.Results] as? [[String: AnyObject]] else {
+                    completionHandler(booksList: nil, errorString: "Can't get book information.")
+                    return
+            }
+            
+            completionHandler(booksList: Book.booksListFromResults(bookResults), errorString: nil)
         }
     }
     

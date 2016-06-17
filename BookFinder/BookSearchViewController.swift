@@ -13,7 +13,26 @@ class BookSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ITCClient.sharedInstance.getBooksForSearchTerm("harry")
+       getBooksForSearchTerm("Harry Potter")
     }
     
+    func getBooksForSearchTerm(term: String) {
+        ITCClient.sharedInstance.getBooksForSearchTerm(term) {
+            booksList, errorString in
+            
+            guard let booksList = booksList else {
+                self.displayError("Error", message: errorString)
+                return
+            }
+            
+            print(booksList)
+        }
+    }
+    
+    func displayError(title: String, message: String?) {
+        if let message = message {
+            // TODO: display error to user
+            print(message)
+        }
+    }
 }

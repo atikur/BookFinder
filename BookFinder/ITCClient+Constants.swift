@@ -24,6 +24,15 @@ extension ITCClient {
     }
     
     struct ResponseKeys {
-        
+        static let Results = "results"
+        static let TrackName = "trackName"
+        static let ArtistName = "artistName"
+        static let ArtworkUrl60 = "artworkUrl60"
+        static let ArtworkUrl100 = "artworkUrl100"
+        static let TrackViewUrl = "trackViewUrl"
+        static let Kind = "kind"
+        static let Currency = "currency"
+        static let Price = "price"
+        static let Genres = "genres"
     }
 }
