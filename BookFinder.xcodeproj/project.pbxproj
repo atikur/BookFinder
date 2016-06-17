@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		24FC76501D14016A00D2ED48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC764F1D14016A00D2ED48 /* AppDelegate.swift */; };
-		24FC76521D14016A00D2ED48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC76511D14016A00D2ED48 /* ViewController.swift */; };
 		24FC76551D14016A00D2ED48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FC76531D14016A00D2ED48 /* Main.storyboard */; };
 		24FC76571D14016A00D2ED48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24FC76561D14016A00D2ED48 /* Assets.xcassets */; };
 		24FC765A1D14016A00D2ED48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FC76581D14016A00D2ED48 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		24FC764C1D14016A00D2ED48 /* BookFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FC764F1D14016A00D2ED48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24FC76511D14016A00D2ED48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		24FC76541D14016A00D2ED48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24FC76561D14016A00D2ED48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24FC76591D14016A00D2ED48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				24FC764F1D14016A00D2ED48 /* AppDelegate.swift */,
-				24FC76511D14016A00D2ED48 /* ViewController.swift */,
 				24FC76531D14016A00D2ED48 /* Main.storyboard */,
 				24FC76561D14016A00D2ED48 /* Assets.xcassets */,
 				24FC76581D14016A00D2ED48 /* LaunchScreen.storyboard */,
@@ -135,7 +132,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24FC76521D14016A00D2ED48 /* ViewController.swift in Sources */,
 				24FC76501D14016A00D2ED48 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +248,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BookFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atikur.BookFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -263,6 +260,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BookFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atikur.BookFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
