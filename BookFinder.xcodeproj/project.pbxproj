@@ -12,6 +12,9 @@
 		24FC76571D14016A00D2ED48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24FC76561D14016A00D2ED48 /* Assets.xcassets */; };
 		24FC765A1D14016A00D2ED48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FC76581D14016A00D2ED48 /* LaunchScreen.storyboard */; };
 		24FC76621D14023200D2ED48 /* BookSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC76611D14023200D2ED48 /* BookSearchViewController.swift */; };
+		24FC76641D14038B00D2ED48 /* ITCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC76631D14038B00D2ED48 /* ITCClient.swift */; };
+		24FC76661D1403FA00D2ED48 /* ITCClient+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC76651D1403FA00D2ED48 /* ITCClient+Constants.swift */; };
+		24FC76681D14058600D2ED48 /* ITCClient+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC76671D14058600D2ED48 /* ITCClient+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		24FC76591D14016A00D2ED48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24FC765B1D14016A00D2ED48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24FC76611D14023200D2ED48 /* BookSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchViewController.swift; sourceTree = "<group>"; };
+		24FC76631D14038B00D2ED48 /* ITCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITCClient.swift; sourceTree = "<group>"; };
+		24FC76651D1403FA00D2ED48 /* ITCClient+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ITCClient+Constants.swift"; sourceTree = "<group>"; };
+		24FC76671D14058600D2ED48 /* ITCClient+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ITCClient+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +62,23 @@
 			children = (
 				24FC764F1D14016A00D2ED48 /* AppDelegate.swift */,
 				24FC76611D14023200D2ED48 /* BookSearchViewController.swift */,
+				24FC76691D14074500D2ED48 /* ITC */,
 				24FC76531D14016A00D2ED48 /* Main.storyboard */,
 				24FC76561D14016A00D2ED48 /* Assets.xcassets */,
 				24FC76581D14016A00D2ED48 /* LaunchScreen.storyboard */,
 				24FC765B1D14016A00D2ED48 /* Info.plist */,
 			);
 			path = BookFinder;
+			sourceTree = "<group>";
+		};
+		24FC76691D14074500D2ED48 /* ITC */ = {
+			isa = PBXGroup;
+			children = (
+				24FC76631D14038B00D2ED48 /* ITCClient.swift */,
+				24FC76651D1403FA00D2ED48 /* ITCClient+Constants.swift */,
+				24FC76671D14058600D2ED48 /* ITCClient+Convenience.swift */,
+			);
+			name = ITC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24FC76641D14038B00D2ED48 /* ITCClient.swift in Sources */,
+				24FC76681D14058600D2ED48 /* ITCClient+Convenience.swift in Sources */,
 				24FC76501D14016A00D2ED48 /* AppDelegate.swift in Sources */,
 				24FC76621D14023200D2ED48 /* BookSearchViewController.swift in Sources */,
+				24FC76661D1403FA00D2ED48 /* ITCClient+Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,4 +10,10 @@ import UIKit
 
 class BookSearchViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        ITCClient.sharedInstance.getBooksForSearchTerm("harry")
+    }
+    
 }
