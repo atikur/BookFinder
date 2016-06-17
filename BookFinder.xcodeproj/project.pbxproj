@@ -11,6 +11,7 @@
 		24FC76551D14016A00D2ED48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FC76531D14016A00D2ED48 /* Main.storyboard */; };
 		24FC76571D14016A00D2ED48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24FC76561D14016A00D2ED48 /* Assets.xcassets */; };
 		24FC765A1D14016A00D2ED48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FC76581D14016A00D2ED48 /* LaunchScreen.storyboard */; };
+		24FC76621D14023200D2ED48 /* BookSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC76611D14023200D2ED48 /* BookSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		24FC76561D14016A00D2ED48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24FC76591D14016A00D2ED48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24FC765B1D14016A00D2ED48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24FC76611D14023200D2ED48 /* BookSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				24FC764F1D14016A00D2ED48 /* AppDelegate.swift */,
+				24FC76611D14023200D2ED48 /* BookSearchViewController.swift */,
 				24FC76531D14016A00D2ED48 /* Main.storyboard */,
 				24FC76561D14016A00D2ED48 /* Assets.xcassets */,
 				24FC76581D14016A00D2ED48 /* LaunchScreen.storyboard */,
@@ -133,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24FC76501D14016A00D2ED48 /* AppDelegate.swift in Sources */,
+				24FC76621D14023200D2ED48 /* BookSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
