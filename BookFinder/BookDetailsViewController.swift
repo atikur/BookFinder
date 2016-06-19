@@ -11,6 +11,8 @@ import CoreData
 
 class BookDetailsViewController: UIViewController {
     
+    // MARK: - Properties
+    
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -19,6 +21,8 @@ class BookDetailsViewController: UIViewController {
     
     let coreDataStack = (UIApplication.sharedApplication().delegate as! AppDelegate).coreDataStack
     var book: Book!
+    
+    // MARK: -
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +36,17 @@ class BookDetailsViewController: UIViewController {
         saveBookInCoreData(book)
     }
     
+    // save book in CoreData if it doesn't already exist
     func saveBookInCoreData(book: Book) {
         let fetchRequest = NSFetchRequest(entityName: "RecentlyViewedBook")
         
+        // predicate
         let predicate = NSPredicate(format: "storeUrl=%@", book.storeUrl.absoluteString)
         fetchRequest.predicate = predicate
         
         do {
             let results = try coreDataStack.context.executeFetchRequest(fetchRequest)
-            // insert if book isn't already added
+            // insert new record
             if results.isEmpty {
                 _ = RecentlyViewedBook(book: book, context: coreDataStack.context)
                 coreDataStack.save()
