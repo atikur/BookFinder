@@ -10,18 +10,15 @@ import UIKit
 
 class BookSearchViewController: UIViewController {
     
+    // MARK: - Properties
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     var dataTask: NSURLSessionDataTask?
+    var books = [Book]()
     
-    var books: [Book]!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        books = []
-    }
+    // MARK: - Search Books
     
     func getBooksForSearchTerm(term: String) {
         dataTask = ITCClient.sharedInstance.getBooksForSearchTerm(term) {
@@ -42,12 +39,17 @@ class BookSearchViewController: UIViewController {
     
     func displayError(title: String, message: String?) {
         if let message = message {
-            // TODO: display error to user
-            print(message)
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+            alertController.addAction(okayAction)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
         }
     }
     
-    // MARK: - 
+    // MARK: - Prepare For Segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowBookDetails" {
@@ -76,7 +78,7 @@ extension BookSearchViewController: UITableViewDelegate, UITableViewDataSource {
         performSegueWithIdentifier("ShowBookDetails", sender: indexPath)
     }
     
-    // MARK: - Helper
+    // MARK: - Helpers
     
     func configureCell(cell: BookTableViewCell, forIndexPath indexPath: NSIndexPath, withBook book: Book) {
         cell.titleLabel.text = book.title
