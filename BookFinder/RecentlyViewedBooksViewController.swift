@@ -11,9 +11,12 @@ import CoreData
 
 class RecentlyViewedBooksViewController: UITableViewController {
     
-    let coreDataStack = (UIApplication.sharedApplication().delegate as! AppDelegate).coreDataStack
+    // MARK: - Properties
     
+    let coreDataStack = (UIApplication.sharedApplication().delegate as! AppDelegate).coreDataStack
     var fetchedResultsController: NSFetchedResultsController!
+    
+    // MARK: -
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,7 @@ class RecentlyViewedBooksViewController: UITableViewController {
             try fetchedResultsController.performFetch()
             fetchedResultsController.delegate = self
         } catch {
-            print("Erro while trying to perform a search.")
+            print("Error while trying to perform a search.")
         }
     }
 }
