@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class BookDetailsViewController: UIViewController {
     
@@ -16,6 +17,7 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    let coreDataStack = (UIApplication.sharedApplication().delegate as! AppDelegate).coreDataStack
     var book: Book!
     
     override func viewDidLoad() {
@@ -27,6 +29,28 @@ class BookDetailsViewController: UIViewController {
         self.priceLabel.text = "Price: \(book.price) \(book.currency)"
         
         downloadBookCoverImage()
+        saveBookInCoreData(book)
+    }
+    
+    func saveBookInCoreData(book: Book) {
+        let fetchRequest = NSFetchRequest(entityName: "RecentlyViewedBook")
+        
+        let predicate = NSPredicate(format: "storeUrl=%@", book.storeUrl.absoluteString)
+        fetchRequest.predicate = predicate
+        
+        do {
+            let results = try coreDataStack.context.executeFetchRequest(fetchRequest)
+            // insert if book isn't already added
+            if results.isEmpty {
+                print("results empty")
+                _ = RecentlyViewedBook(book: book, context: coreDataStack.context)
+                coreDataStack.save()
+            } else {
+                print(results.count)
+            }
+        } catch {
+            print("Error while trying to fetch recently viewed books.")
+        }
     }
     
     func downloadBookCoverImage() {
