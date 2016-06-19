@@ -15,12 +15,12 @@ class RecentlyViewedBook: NSManagedObject {
     convenience init(book: Book, context: NSManagedObjectContext) {
         if let entity = NSEntityDescription.entityForName("RecentlyViewedBook", inManagedObjectContext: context) {
             self.init(entity: entity, insertIntoManagedObjectContext: context)
-            self.title = book.name
-            self.author = book.artist
+            self.title = book.title
+            self.author = book.author
             self.price = book.price
             self.currency = book.currency
             self.storeUrl = book.storeUrl.absoluteString
-            self.imageUrl = book.imageUrl100.absoluteString
+            self.imageUrl = book.imageUrl.absoluteString
         } else {
             fatalError("Unable to find Entitiy 'RecentlyViewedBook'.")
         }

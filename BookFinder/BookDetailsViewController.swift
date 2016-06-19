@@ -23,8 +23,8 @@ class BookDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.titleLabel.text = book.name
-        self.authorLabel.text = "Author: \(book.artist)"
+        self.titleLabel.text = book.title
+        self.authorLabel.text = "Author: \(book.author)"
         self.genreLabel.text = "Genre: \(book.genres)"
         self.priceLabel.text = "Price: \(book.price) \(book.currency)"
         
@@ -42,11 +42,8 @@ class BookDetailsViewController: UIViewController {
             let results = try coreDataStack.context.executeFetchRequest(fetchRequest)
             // insert if book isn't already added
             if results.isEmpty {
-                print("results empty")
                 _ = RecentlyViewedBook(book: book, context: coreDataStack.context)
                 coreDataStack.save()
-            } else {
-                print(results.count)
             }
         } catch {
             print("Error while trying to fetch recently viewed books.")
@@ -54,7 +51,7 @@ class BookDetailsViewController: UIViewController {
     }
     
     func downloadBookCoverImage() {
-        ITCClient.sharedInstance.taskForImageWithUrl(book.imageUrl100) {
+        ITCClient.sharedInstance.taskForImageWithUrl(book.imageUrl) {
             data, error in
             
             guard let data = data,

@@ -79,11 +79,11 @@ extension BookSearchViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - Helper
     
     func configureCell(cell: BookTableViewCell, forIndexPath indexPath: NSIndexPath, withBook book: Book) {
-        cell.titleLabel.text = book.name
-        cell.authorLabel.text = book.artist
+        cell.titleLabel.text = book.title
+        cell.authorLabel.text = book.author
         cell.bookImageView.image = nil
         
-        let task = ITCClient.sharedInstance.taskForImageWithUrl(book.imageUrl60) {
+        let task = ITCClient.sharedInstance.taskForImageWithUrl(book.imageUrl) {
             data, error in
             
             guard let data = data,
