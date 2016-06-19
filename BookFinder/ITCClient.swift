@@ -49,8 +49,7 @@ class ITCClient: NSObject {
         return task
     }
     
-    func taskForImageWithUrlString(urlString: String, completionHandler: (data: NSData?, error: NSError?) -> Void) -> NSURLSessionTask {
-        let url = NSURL(string: urlString)!
+    func taskForImageWithUrl(url: NSURL, completionHandler: (data: NSData?, error: NSError?) -> Void) -> NSURLSessionTask {
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) {
             data, response, error in

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		247FA3291D141E2200299D04 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FA3281D141E2200299D04 /* Book.swift */; };
+		24D05C171D16A48D005632FC /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D05C161D16A48D005632FC /* BookTableViewCell.swift */; };
 		24FC76501D14016A00D2ED48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC764F1D14016A00D2ED48 /* AppDelegate.swift */; };
 		24FC76551D14016A00D2ED48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FC76531D14016A00D2ED48 /* Main.storyboard */; };
 		24FC76571D14016A00D2ED48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24FC76561D14016A00D2ED48 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		247FA3281D141E2200299D04 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		24D05C161D16A48D005632FC /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		24FC764C1D14016A00D2ED48 /* BookFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FC764F1D14016A00D2ED48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24FC76541D14016A00D2ED48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				24FC764F1D14016A00D2ED48 /* AppDelegate.swift */,
 				24FC76611D14023200D2ED48 /* BookSearchViewController.swift */,
+				24D05C161D16A48D005632FC /* BookTableViewCell.swift */,
 				24FC76691D14074500D2ED48 /* ITC */,
 				24FC76531D14016A00D2ED48 /* Main.storyboard */,
 				24FC76561D14016A00D2ED48 /* Assets.xcassets */,
@@ -158,6 +161,7 @@
 				24FC76641D14038B00D2ED48 /* ITCClient.swift in Sources */,
 				24FC76681D14058600D2ED48 /* ITCClient+Convenience.swift in Sources */,
 				247FA3291D141E2200299D04 /* Book.swift in Sources */,
+				24D05C171D16A48D005632FC /* BookTableViewCell.swift in Sources */,
 				24FC76501D14016A00D2ED48 /* AppDelegate.swift in Sources */,
 				24FC76621D14023200D2ED48 /* BookSearchViewController.swift in Sources */,
 				24FC76661D1403FA00D2ED48 /* ITCClient+Constants.swift in Sources */,

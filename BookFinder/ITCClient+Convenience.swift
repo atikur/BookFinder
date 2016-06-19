@@ -10,7 +10,7 @@ import UIKit
 
 extension ITCClient {
     
-    func getBooksForSearchTerm(term: String, completionHandler: (booksList: [Book]?, errorString: String?) -> Void) {
+    func getBooksForSearchTerm(term: String, completionHandler: (booksList: [Book]?, errorString: String?) -> Void) -> NSURLSessionDataTask {
         let methodParameters: [String: String] = [
             ParameterKeys.Term: term,
             ParameterKeys.Entity: ParameterValues.EntityEbook
@@ -19,7 +19,7 @@ extension ITCClient {
         let url = itcURLFromParameters(methodParameters)
         let request = NSURLRequest(URL: url)
         
-        taskForRequest(request) {
+        let task = taskForRequest(request) {
             result, error in
             
             guard error == nil else {
@@ -35,6 +35,8 @@ extension ITCClient {
             
             completionHandler(booksList: Book.booksListFromResults(bookResults), errorString: nil)
         }
+        
+        return task
     }
     
     // MARK: - Helpers
