@@ -46,6 +46,15 @@ class BookSearchViewController: UIViewController {
             print(message)
         }
     }
+    
+    // MARK: - 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowBookDetails" {
+            let destinationVC = segue.destinationViewController as! BookDetailsViewController
+            destinationVC.book = books[(sender as! NSIndexPath).row]
+        }
+    }
 }
 
 extension BookSearchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -61,6 +70,10 @@ extension BookSearchViewController: UITableViewDelegate, UITableViewDataSource {
         configureCell(cell, forIndexPath: indexPath, withBook: book)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("ShowBookDetails", sender: indexPath)
     }
     
     // MARK: - Helper
