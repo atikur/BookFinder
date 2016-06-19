@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YLA-zv-gs4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WFZ-fg-MYe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -99,7 +99,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V4y-pX-m5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="368"/>
+            <point key="canvasLocation" x="1880" y="368"/>
+        </scene>
+        <!--Recently Viewed Books-->
+        <scene sceneID="2HW-x7-3jG">
+            <objects>
+                <tableViewController id="Mth-mb-WxA" customClass="RecentlyViewedBooksViewController" customModule="BookFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eCG-Ry-Jdr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecentlyViewedBookCell" textLabel="eZB-R1-dtd" detailTextLabel="h2q-Fz-bWx" style="IBUITableViewCellStyleSubtitle" id="Vbk-Ex-HRD">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vbk-Ex-HRD" id="nrr-eL-DyF">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eZB-R1-dtd">
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h2q-Fz-bWx">
+                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mth-mb-WxA" id="EXm-4A-8Qk"/>
+                            <outlet property="delegate" destination="Mth-mb-WxA" id="SPU-5S-vCV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Recently Viewed Books" id="zUg-Na-J3K"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0Y-XV-3NK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1889" y="1112"/>
         </scene>
         <!--Book Details View Controller-->
         <scene sceneID="fpN-ec-hyp">
@@ -173,12 +218,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLH-FM-6rt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="368"/>
+            <point key="canvasLocation" x="2582" y="368"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="aCB-Ge-CFe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YLA-zv-gs4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" id="UEs-Wy-KOY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nkM-50-ks3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -191,7 +237,44 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWh-Dv-I7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="368"/>
+            <point key="canvasLocation" x="1168" y="368"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cHJ-tK-LRj">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WFZ-fg-MYe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ujh-aT-W1L">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="YLA-zv-gs4" kind="relationship" relationship="viewControllers" id="itJ-1c-1ig"/>
+                        <segue destination="78w-QF-kCJ" kind="relationship" relationship="viewControllers" id="ds7-gQ-KMt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUe-jf-jrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="333" y="688"/>
+        </scene>
+        <!--Recently Viewed-->
+        <scene sceneID="7zL-xT-Ut8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="78w-QF-kCJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recently Viewed" id="luW-8z-m5F"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6rU-Ny-9k5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mth-mb-WxA" kind="relationship" relationship="rootViewController" id="LdE-RZ-4WV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tC7-uQ-pUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1168" y="1112"/>
         </scene>
     </scenes>
 </document>
