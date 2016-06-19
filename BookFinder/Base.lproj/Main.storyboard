@@ -25,7 +25,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fuS-5o-c6k">
-                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookCell" rowHeight="104" id="Y1e-J8-2mO" customClass="BookTableViewCell" customModule="BookFinder" customModuleProvider="target">
@@ -121,14 +121,14 @@
                                             <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h2q-Fz-bWx">
                                             <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -220,11 +220,11 @@
             </objects>
             <point key="canvasLocation" x="2582" y="368"/>
         </scene>
-        <!--Search-->
+        <!--Navigation Controller-->
         <scene sceneID="aCB-Ge-CFe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YLA-zv-gs4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="UEs-Wy-KOY"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="UEs-Wy-KOY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nkM-50-ks3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -261,7 +261,7 @@
         <scene sceneID="7zL-xT-Ut8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="78w-QF-kCJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recently Viewed" id="luW-8z-m5F"/>
+                    <tabBarItem key="tabBarItem" title="Recently Viewed" image="recentlyViewed" id="luW-8z-m5F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6rU-Ny-9k5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -277,4 +277,7 @@
             <point key="canvasLocation" x="1168" y="1112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="recentlyViewed" width="30" height="30"/>
+    </resources>
 </document>
