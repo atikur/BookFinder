@@ -27,6 +27,16 @@ struct Book {
         self.genres = recentlyViewedBook.genre!
     }
     
+    init(wishlistBook: WishlistBook) {
+        self.title = wishlistBook.title!
+        self.author = wishlistBook.author!
+        self.imageUrl = NSURL(string: wishlistBook.imageUrl!)!
+        self.storeUrl = NSURL(string: wishlistBook.storeUrl!)!
+        self.currency = wishlistBook.currency!
+        self.price = wishlistBook.price! as Double
+        self.genres = wishlistBook.genre!
+    }
+    
     init?(dictionary: [String: AnyObject]) {
         guard let title = dictionary[ITCClient.ResponseKeys.TrackName] as? String,
             imageUrlStr = dictionary[ITCClient.ResponseKeys.ArtworkUrl] as? String,
