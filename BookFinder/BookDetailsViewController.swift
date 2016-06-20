@@ -36,6 +36,14 @@ class BookDetailsViewController: UIViewController {
         saveBookInCoreData(book)
     }
     
+    // MARK: - Actions
+    
+    @IBAction func buyButtonTapped(sender: UIButton) {
+        UIApplication.sharedApplication().openURL(book.storeUrl)
+    }
+    
+    // MARK: -
+    
     // save book in CoreData if it doesn't already exist
     func saveBookInCoreData(book: Book) {
         let fetchRequest = NSFetchRequest(entityName: "RecentlyViewedBook")

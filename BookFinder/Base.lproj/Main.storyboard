@@ -192,6 +192,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ms-Ot-dXe">
+                                <rect key="frame" x="285" y="343" width="30" height="30"/>
+                                <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="buyButtonTapped:" destination="Tnq-YU-HnG" eventType="touchUpInside" id="6SY-0N-5Bd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -202,8 +209,10 @@
                             <constraint firstAttribute="leadingMargin" secondItem="2jU-uQ-ryf" secondAttribute="leading" id="HCl-it-w5z"/>
                             <constraint firstItem="NaZ-je-Gik" firstAttribute="top" secondItem="XZF-jR-ZSy" secondAttribute="bottom" constant="8" id="Hdd-uc-yI1"/>
                             <constraint firstItem="2jU-uQ-ryf" firstAttribute="top" secondItem="NaZ-je-Gik" secondAttribute="bottom" constant="8" id="Jfo-3R-lni"/>
+                            <constraint firstItem="3Ms-Ot-dXe" firstAttribute="top" secondItem="Ona-au-VXw" secondAttribute="bottom" constant="8" id="N07-ac-N1g"/>
                             <constraint firstItem="XZF-jR-ZSy" firstAttribute="top" secondItem="okJ-Bv-v3R" secondAttribute="bottom" constant="8" id="NDz-hX-eFY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ona-au-VXw" secondAttribute="trailing" id="QTY-As-gKC"/>
+                            <constraint firstItem="3Ms-Ot-dXe" firstAttribute="centerX" secondItem="n37-oo-yCJ" secondAttribute="centerX" id="Yso-sg-IaU"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Ona-au-VXw" secondAttribute="leading" id="bIT-Q7-OVq"/>
                             <constraint firstItem="Ona-au-VXw" firstAttribute="top" secondItem="2jU-uQ-ryf" secondAttribute="bottom" constant="8" id="egL-z9-gtQ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="XZF-jR-ZSy" secondAttribute="leading" id="euv-F2-TPM"/>
