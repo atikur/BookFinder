@@ -78,6 +78,9 @@
                                     <outlet property="delegate" destination="XZD-3Y-q4D" id="GCm-wv-0Lk"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kwz-1S-5xV">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -87,11 +90,14 @@
                             <constraint firstAttribute="trailing" secondItem="eUP-9C-wsu" secondAttribute="trailing" id="hu7-P8-o9L"/>
                             <constraint firstItem="fuS-5o-c6k" firstAttribute="leading" secondItem="qn4-IG-GXc" secondAttribute="leading" id="iGc-LY-35d"/>
                             <constraint firstItem="eUP-9C-wsu" firstAttribute="top" secondItem="joJ-Y7-aeq" secondAttribute="bottom" id="ibB-KQ-awO"/>
+                            <constraint firstItem="kwz-1S-5xV" firstAttribute="centerX" secondItem="qn4-IG-GXc" secondAttribute="centerX" id="lUn-cR-w8p"/>
+                            <constraint firstItem="kwz-1S-5xV" firstAttribute="centerY" secondItem="qn4-IG-GXc" secondAttribute="centerY" id="uJr-m7-6K5"/>
                             <constraint firstItem="eUP-9C-wsu" firstAttribute="leading" secondItem="qn4-IG-GXc" secondAttribute="leading" id="yrk-I0-Bt9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search Books" id="eBy-aL-dwo"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="kwz-1S-5xV" id="hCS-Ac-KTt"/>
                         <outlet property="searchBar" destination="eUP-9C-wsu" id="20X-hC-631"/>
                         <outlet property="tableView" destination="fuS-5o-c6k" id="etN-4V-OX8"/>
                         <segue destination="Tnq-YU-HnG" kind="show" identifier="ShowBookDetails" id="Z2r-lO-Rg9"/>

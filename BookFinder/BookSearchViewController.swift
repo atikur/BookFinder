@@ -14,13 +14,28 @@ class BookSearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var dataTask: NSURLSessionDataTask?
     var books = [Book]()
     
+    // MARK: -
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        showActivityIndicator(show: false)
+    }
+    
+    func showActivityIndicator(show show: Bool) {
+        activityIndicator.hidden = !show
+        show ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+    }
+    
     // MARK: - Search Books
     
     func getBooksForSearchTerm(term: String) {
+        showActivityIndicator(show: true)
         dataTask = ITCClient.sharedInstance.getBooksForSearchTerm(term) {
             booksList, errorString in
             
@@ -32,6 +47,7 @@ class BookSearchViewController: UIViewController {
             self.books = booksList
             
             dispatch_async(dispatch_get_main_queue()) {
+                self.showActivityIndicator(show: false)
                 self.tableView.reloadData()
             }
         }
