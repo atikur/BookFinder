@@ -6,6 +6,7 @@ Using the `BookFinder` app, you can easily find your favorite books on `iTunes S
 - Search books by author, title etc.
 - View book details
 - Open the store link in `iBooks`
+- Add books to wishlist
 - `Recently Viewed` tab keeps track of all the items viewed
 
 ## Requirements
