@@ -21,6 +21,7 @@ class RecentlyViewedBook: NSManagedObject {
             self.currency = book.currency
             self.storeUrl = book.storeUrl.absoluteString
             self.imageUrl = book.imageUrl.absoluteString
+            self.genre = book.genres
         } else {
             fatalError("Unable to find Entitiy 'RecentlyViewedBook'.")
         }

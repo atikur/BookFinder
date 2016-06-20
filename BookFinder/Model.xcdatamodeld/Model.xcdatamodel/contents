@@ -3,12 +3,13 @@
     <entity name="RecentlyViewedBook" representedClassName=".RecentlyViewedBook" syncable="YES">
         <attribute name="author" attributeType="String" syncable="YES"/>
         <attribute name="currency" attributeType="String" syncable="YES"/>
+        <attribute name="genre" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" attributeType="String" syncable="YES"/>
         <attribute name="price" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="storeUrl" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="RecentlyViewedBook" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="RecentlyViewedBook" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

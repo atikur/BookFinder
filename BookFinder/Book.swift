@@ -24,7 +24,7 @@ struct Book {
         self.storeUrl = NSURL(string: recentlyViewedBook.storeUrl!)!
         self.currency = recentlyViewedBook.currency!
         self.price = recentlyViewedBook.price! as Double
-        self.genres = "Not available"
+        self.genres = recentlyViewedBook.genre!
     }
     
     init?(dictionary: [String: AnyObject]) {
