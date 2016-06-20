@@ -362,7 +362,7 @@
         <scene sceneID="6mA-MW-dMi">
             <objects>
                 <navigationController id="3pe-5G-6Ih" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wishlist" id="FL3-Vj-Jan"/>
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="wishlist" id="FL3-Vj-Jan"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kDl-v3-G2b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -397,6 +397,7 @@
     </scenes>
     <resources>
         <image name="recentlyViewed" width="30" height="30"/>
+        <image name="wishlist" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="P1U-VA-c6d"/>
