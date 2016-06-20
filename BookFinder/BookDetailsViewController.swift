@@ -18,6 +18,7 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var wishlistSwitch: UISwitch!
     
     let coreDataStack = (UIApplication.sharedApplication().delegate as! AppDelegate).coreDataStack
     var book: Book!
@@ -32,6 +33,8 @@ class BookDetailsViewController: UIViewController {
         self.genreLabel.text = "Genre: \(book.genres)"
         self.priceLabel.text = "Price: \(book.price) \(book.currency)"
         
+        wishlistSwitch.on = isBookInWishlist()
+        
         downloadBookCoverImage()
         saveBookInCoreData(book)
     }
@@ -40,6 +43,11 @@ class BookDetailsViewController: UIViewController {
     
     @IBAction func buyButtonTapped(sender: UIButton) {
         UIApplication.sharedApplication().openURL(book.storeUrl)
+    }
+    
+    @IBAction func wishlistSwitchChanged(sender: UISwitch) {
+        toggleWishlistStatus()
+        wishlistSwitch.on = sender.on
     }
     
     // MARK: -
@@ -61,6 +69,46 @@ class BookDetailsViewController: UIViewController {
             }
         } catch {
             print("Error while trying to fetch recently viewed books.")
+        }
+    }
+    
+    func isBookInWishlist() -> Bool {
+        var inWishlist = false
+        let fetchRequest = NSFetchRequest(entityName: "WishlistBook")
+        
+        // predicate
+        let predicate = NSPredicate(format: "storeUrl=%@", book.storeUrl.absoluteString)
+        fetchRequest.predicate = predicate
+        
+        do {
+            let results = try coreDataStack.context.executeFetchRequest(fetchRequest)
+            if !results.isEmpty {
+                inWishlist = true
+            }
+        } catch {
+            print("Error while trying to fetch recently viewed books.")
+        }
+        return inWishlist
+    }
+    
+    func toggleWishlistStatus() {
+        let fetchRequest = NSFetchRequest(entityName: "WishlistBook")
+        
+        // predicate
+        let predicate = NSPredicate(format: "storeUrl=%@", book.storeUrl.absoluteString)
+        fetchRequest.predicate = predicate
+        
+        do {
+            let results = try coreDataStack.context.executeFetchRequest(fetchRequest)
+            if results.isEmpty {
+                _ = WishlistBook(book: book, context: coreDataStack.context)
+                coreDataStack.save()
+            } else {
+                coreDataStack.context.deleteObject(results[0] as! WishlistBook)
+                coreDataStack.save()
+            }
+        } catch {
+            print("Error while trying to fetch wishlist books.")
         }
     }
     
