@@ -17,6 +17,16 @@ struct Book {
     let price: Double
     let genres: String
     
+    init(recentlyViewedBook: RecentlyViewedBook) {
+        self.title = recentlyViewedBook.title!
+        self.author = recentlyViewedBook.author!
+        self.imageUrl = NSURL(string: recentlyViewedBook.imageUrl!)!
+        self.storeUrl = NSURL(string: recentlyViewedBook.storeUrl!)!
+        self.currency = recentlyViewedBook.currency!
+        self.price = recentlyViewedBook.price! as Double
+        self.genres = "Not available"
+    }
+    
     init?(dictionary: [String: AnyObject]) {
         guard let title = dictionary[ITCClient.ResponseKeys.TrackName] as? String,
             imageUrlStr = dictionary[ITCClient.ResponseKeys.ArtworkUrl] as? String,

@@ -141,6 +141,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recently Viewed Books" id="zUg-Na-J3K"/>
+                    <connections>
+                        <segue destination="Tnq-YU-HnG" kind="show" identifier="ShowRecentlyViewedBookDetails" id="vqj-jE-Cje"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0Y-XV-3NK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,4 +283,7 @@
     <resources>
         <image name="recentlyViewed" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Z2r-lO-Rg9"/>
+    </inferredMetricsTieBreakers>
 </document>

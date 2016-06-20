@@ -36,6 +36,17 @@ class RecentlyViewedBooksViewController: UITableViewController {
             print("Error while trying to perform a search.")
         }
     }
+    
+    // MARK: - 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowRecentlyViewedBookDetails" {
+            let destinationVC = segue.destinationViewController as! BookDetailsViewController
+            let recentlyViewedBook = fetchedResultsController.objectAtIndexPath(sender as! NSIndexPath) as! RecentlyViewedBook
+            let book = Book(recentlyViewedBook: recentlyViewedBook)
+            destinationVC.book = book
+        }
+    }
 }
 
 extension RecentlyViewedBooksViewController: NSFetchedResultsControllerDelegate {
@@ -84,5 +95,9 @@ extension RecentlyViewedBooksViewController {
         cell.detailTextLabel?.text = recentlyViewedBook.author
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("ShowRecentlyViewedBookDetails", sender: indexPath)
     }
 }
