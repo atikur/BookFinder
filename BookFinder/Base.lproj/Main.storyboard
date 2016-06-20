@@ -81,9 +81,17 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kwz-1S-5xV">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No books found." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xg6-5V-ZlS">
+                                <rect key="frame" x="237" y="290" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xg6-5V-ZlS" firstAttribute="centerY" secondItem="qn4-IG-GXc" secondAttribute="centerY" id="0h8-Tg-dUY"/>
+                            <constraint firstItem="xg6-5V-ZlS" firstAttribute="centerX" secondItem="qn4-IG-GXc" secondAttribute="centerX" id="D3Y-44-1yo"/>
                             <constraint firstItem="Tjg-QL-jac" firstAttribute="top" secondItem="fuS-5o-c6k" secondAttribute="bottom" id="JRr-PK-In9"/>
                             <constraint firstItem="fuS-5o-c6k" firstAttribute="top" secondItem="eUP-9C-wsu" secondAttribute="bottom" id="Wzw-86-WtY"/>
                             <constraint firstAttribute="trailing" secondItem="fuS-5o-c6k" secondAttribute="trailing" id="coe-T4-jCk"/>
@@ -98,6 +106,7 @@
                     <navigationItem key="navigationItem" title="Search Books" id="eBy-aL-dwo"/>
                     <connections>
                         <outlet property="activityIndicator" destination="kwz-1S-5xV" id="hCS-Ac-KTt"/>
+                        <outlet property="noBooksLabel" destination="xg6-5V-ZlS" id="neN-1q-6iG"/>
                         <outlet property="searchBar" destination="eUP-9C-wsu" id="20X-hC-631"/>
                         <outlet property="tableView" destination="fuS-5o-c6k" id="etN-4V-OX8"/>
                         <segue destination="Tnq-YU-HnG" kind="show" identifier="ShowBookDetails" id="Z2r-lO-Rg9"/>

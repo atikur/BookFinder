@@ -15,6 +15,7 @@ class BookSearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var noBooksLabel: UILabel!
     
     var dataTask: NSURLSessionDataTask?
     var books = [Book]()
@@ -25,6 +26,8 @@ class BookSearchViewController: UIViewController {
         super.viewDidLoad()
         
         showActivityIndicator(show: false)
+        tableView.hidden = true
+        noBooksLabel.hidden = true
     }
     
     func showActivityIndicator(show show: Bool) {
@@ -36,6 +39,8 @@ class BookSearchViewController: UIViewController {
     
     func getBooksForSearchTerm(term: String) {
         showActivityIndicator(show: true)
+        noBooksLabel.hidden = true
+        
         dataTask = ITCClient.sharedInstance.getBooksForSearchTerm(term) {
             booksList, errorString in
             
@@ -48,6 +53,14 @@ class BookSearchViewController: UIViewController {
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.showActivityIndicator(show: false)
+                
+                if self.books.isEmpty {
+                    self.noBooksLabel.hidden = false
+                    self.tableView.hidden = true
+                } else {
+                    self.tableView.hidden = false
+                }
+                
                 self.tableView.reloadData()
             }
         }
