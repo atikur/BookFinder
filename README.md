@@ -11,3 +11,5 @@ Using the `BookFinder` app, you can easily find your favorite books on `iTunes S
 
 ## Requirements
 - Xcode version 7.x
+
+## This will be reviewed by gemini
